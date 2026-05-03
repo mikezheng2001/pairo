@@ -61,7 +61,7 @@ install from source: `pip install -e .` (use
 ## Citation
 
 If you use `pairo` in academic work, please cite it. The repo ships a
-[CITATION.cff](CITATION.cff) — GitHub will auto-render a "Cite this
+[CITATION.cff](CITATION.cff), GitHub will auto-render a "Cite this
 repository" button on the sidebar with both APA and BibTeX entries.
 
 ## Author
