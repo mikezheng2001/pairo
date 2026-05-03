@@ -1,0 +1,81 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pairo"
+version = "0.1.0"
+description = "Pair records, smarter. LLM-powered entity resolution and record linkage."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Zhiyu Zheng" }]
+requires-python = ">=3.10"
+keywords = [
+    "entity-resolution",
+    "record-linkage",
+    "fuzzy-matching",
+    "llm",
+    "openai",
+    "deepseek",
+    "qwen",
+    "moonshot",
+]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+dependencies = [
+    # OpenAI-compatible API client; covers OpenAI, DeepSeek, Moonshot, Qwen,
+    # OpenRouter, Together, vLLM, Ollama, and any other provider that speaks
+    # the /v1/chat/completions protocol.
+    "openai>=1.40",
+    "pydantic>=2.6",
+    "rapidfuzz>=3.6",
+    "tqdm>=4.65",
+]
+
+[project.optional-dependencies]
+embedding = [
+    "voyageai>=0.2",
+    "numpy>=1.26",
+]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=4.1",
+    "ruff>=0.4",
+    "mypy>=1.8",
+]
+
+[project.scripts]
+pairo = "pairo.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/mikezheng2001/pairo"
+Repository = "https://github.com/mikezheng2001/pairo.git"
+Issues = "https://github.com/mikezheng2001/pairo/issues"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pairo"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W", "B", "UP", "SIM"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_unused_ignores = true

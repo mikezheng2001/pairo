@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use pairo in your research, please cite it as below."
+title: "pairo: LLM-powered entity resolution and record linkage"
+abstract: >
+  pairo is an open-source Python library for matching records across
+  datasets — typically firms, products, or entities — using a two-stage
+  pipeline: a cheap blocker (rapidfuzz / embeddings) generates candidates,
+  and an LLM judges them with structured tool-call output. Designed for
+  cases where pure fuzzy matching fails (renames, parent/subsidiary,
+  abbreviations, lookalike-different-entity).
+type: software
+authors:
+  - family-names: "Zheng"
+    given-names: "Zhiyu"
+    # Add your ORCID iD here once you have one — boosts academic discoverability:
+    # orcid: "https://orcid.org/0000-0000-0000-0000"
+version: "0.1.0"
+date-released: "2026-05-02"
+license: MIT
+repository-code: "https://github.com/mikezheng2001/pairo"
+url: "https://github.com/mikezheng2001/pairo"
+keywords:
+  - entity-resolution
+  - record-linkage
+  - fuzzy-matching
+  - large-language-models
+  - data-cleaning
+  - financial-data
